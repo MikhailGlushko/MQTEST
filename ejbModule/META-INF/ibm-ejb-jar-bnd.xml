@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar-bnd xmlns="http://websphere.ibm.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-ejb-jar-bnd_1_2.xsd"
+	version="1.2">
+
+	<message-driven name="MDBMessageReceiver">
+		<jca-adapter activation-spec-binding-name="S0HPSEP100_SSEP"
+			destination-binding-name="SSEP_IN" />
+		<resource-ref name="S0HPSEP100"
+			binding-name="S0HPSEP100" />
+		<message-destination-ref name="SSEP_OUT"
+			binding-name="SSEP_OUT" />
+		<message-destination-ref name="SSEP_IN"
+			binding-name="SSEP_IN" />	
+	</message-driven>
+</ejb-jar-bnd>
